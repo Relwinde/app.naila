@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('description')->nullable();
             $table->decimal('prix', 10, 2);
-            $table->integer('stock_quantity');
+            $table->integer('stock_quantity')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

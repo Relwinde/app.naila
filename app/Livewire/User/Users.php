@@ -2,12 +2,14 @@
 
 namespace App\Livewire\User;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Users extends Component
 {
     public function render()
     {
-        return view('livewire.user.users');
+        $users = User::orderBy('created_at', 'desc')->paginate(10);
+        return view('livewire.user.users', ['users' => $users]);
     }
 }
