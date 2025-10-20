@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('prestations', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->enum('type', ['consultation', 'examen', 'procedure']);
+            $table->enum('type', ['consultation', 'examen']);
+            $table->bigInteger('examen_id')->unsigned()->nullable();
+            $table->foreign('examen_id')->references('id')->on('examens')->onDelete('set null');
             $table->decimal('prix', 10, 2);
             $table->text('description')->nullable();
             $table->timestamps();
