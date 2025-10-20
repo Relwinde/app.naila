@@ -38,7 +38,7 @@ class CreateProduit extends ModalComponent
 
         // Logic to create the product goes here
         $produit = Produit::make([
-            'nom' => $this->name,
+            'nom' => mb_strtoupper($this->name, 'UTF-8'),
             'description' => $this->description,
             'prix' => $this->price,
             'stock_quantity' => $this->stock_quantity,

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prestations', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('nom_patient');
             $table->enum('type', ['consultation', 'examen']);
             $table->bigInteger('examen_id')->unsigned()->nullable();
             $table->foreign('examen_id')->references('id')->on('examens')->onDelete('set null');
