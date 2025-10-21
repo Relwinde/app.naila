@@ -10,6 +10,15 @@ class Examens extends Component
     public function render()
     {
         $examens = Examen::orderBy('nom', 'asc')->paginate(10);
-        return view('livewire.examen.examens',['examens' => $examens]);
+
+        $pageHeader = [
+            'title' => 'Examens',
+            'subtitle' => 'Liste des examens',
+            'breadcrumbs' => [
+                ['label' => 'Accueil', 'url' => route('home')],
+                ['label' => 'Examens']
+            ]
+        ];
+        return view('livewire.examen.examens', ['examens' => $examens, 'pageHeader' => $pageHeader]);
     }
 }

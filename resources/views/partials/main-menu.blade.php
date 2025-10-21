@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="be_pages_dashboard.html">
+                <a class="nav-main-link" href="{{ route('pharmacies') }}">
                     <i class="nav-main-link-icon si si-bag"></i>
                     <span class="nav-main-link-name">Pharmacie</span>
                 </a>
@@ -31,13 +31,13 @@
 
             <li class="nav-main-heading">Outils</li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="be_pages_dashboard.html">
+                <a class="nav-main-link" href="{{ route('produits') }}">
                     <i class="nav-main-link-icon si si-layers"></i>
                     <span class="nav-main-link-name">Produits</span>
                 </a>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="be_pages_dashboard.html">
+                <a class="nav-main-link" href="{{ route('examens') }}">
                     <i class="nav-main-link-icon si si-graph"></i>
                     <span class="nav-main-link-name">Examens</span>
                 </a>
