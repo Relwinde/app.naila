@@ -14,10 +14,10 @@
                                 <i class="fa fa-2x fa-circle-notch text-primary"></i>
                             </p>
                             <h1 class="h4 mb-1">
-                                Sign In
+                                Se connecter
                             </h1>
                             <h2 class="h6 font-w400 text-muted mb-3">
-                                A perfect match for your project
+                                Bienvenue, veuillez vous connecter
                             </h2>
                         </div>
                         <!-- END Header -->
@@ -28,19 +28,19 @@
                         <form class="js-validation-signin" action="be_pages_auth_all.html" method="POST">
                             <div class="py-3">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg form-control-alt" id="login-username" name="login-username" placeholder="Username">
+                                    <input type="text" class="form-control form-control-lg form-control-alt" id="login-username" name="login-username" placeholder="Nom d'utilisateur">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg form-control-alt" id="login-password" name="login-password" placeholder="Password">
+                                    <input type="password" class="form-control form-control-lg form-control-alt" id="login-password" name="login-password" placeholder="Mot de passe">
                                 </div>
                                 <div class="form-group">
                                     <div class="d-md-flex align-items-md-center justify-content-md-between">
                                         <div class="custom-control custom-switch">
                                             <input type="checkbox" class="custom-control-input" id="login-remember" name="login-remember">
-                                            <label class="custom-control-label font-w400" for="login-remember">Remember Me</label>
+                                            <label class="custom-control-label font-w400" for="login-remember">Se rappeler de moi</label>
                                         </div>
                                         <div class="py-2">
-                                            <a class="font-size-sm font-w500" href="op_auth_reminder2.html">Forgot Password?</a>
+                                            <a class="font-size-sm font-w500" href="op_auth_reminder2.html">Mot de passe oublié?</a>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                             <div class="form-group row justify-content-center mb-0">
                                 <div class="col-md-6 col-xl-5">
                                     <button type="submit" class="btn btn-block btn-primary">
-                                        <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
+                                        <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Se connecter
                                     </button>
                                 </div>
                             </div>
