@@ -4,13 +4,13 @@
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2 text-center text-sm-left">
                 <div class="flex-sm-fill">
                     <h1 class="h3 font-w700 mb-2">
-                        Main Dashboard
+                        Tableau de bord
                     </h1>
                     <h2 class="h6 font-w500 text-muted mb-0">
-                        Welcome <a class="font-w600" href="javascript:void(0)">Adam</a>, everything looks great.
+                        Bienvenue <a class="font-w600" href="javascript:void(0)">{{ Auth::user()->name }}</a>, sur votre espace de travail.
                     </h2>
                 </div>
-                <div class="mt-3 mt-sm-0 ml-sm-3">
+                {{-- <div class="mt-3 mt-sm-0 ml-sm-3">
                     <button type="button" class="btn btn-sm btn-alt-primary">
                         <i class="fa fa-cog"></i>
                     </button>
@@ -28,7 +28,7 @@
                             <a class="dropdown-item font-w500" href="javascript:void(0)">Previous Month</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

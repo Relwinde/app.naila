@@ -73,10 +73,10 @@
                     </a>
                     <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_lock.html">
-                        <span class="font-size-sm font-w500">Lock Account</span>
+                        <span class="font-size-sm font-w500">Vérouiller</span>
                     </a>
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_signin.html">
-                        <span class="font-size-sm font-w500">Log Out</span>
+                        <span class="font-size-sm font-w500">Déconnexion</span>
                     </a>
                 </div>
             </div>
