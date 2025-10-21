@@ -1,7 +1,11 @@
 <?php
 
+use App\Livewire\Agent;
+use App\Livewire\Examen\Examens;
 use App\Livewire\Home;
 use App\Livewire\Login;
+use App\Livewire\Pharmacie\Activities;
+use App\Livewire\Produit\Produits;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class)->name('home');
 
 Route::get('/login', Login::class)->name('login');
-Route::get('/produits', App\Livewire\Produit\Produits::class)->name('produits'); 
-Route::get('/examens', App\Livewire\Examen\Examens::class)->name('examens');
-Route::get('/pharmacies', App\Livewire\Pharmacie\Activities::class)->name('pharmacies');
+Route::get('/produits', Produits::class)->name('produits'); 
+Route::get('/examens', Examens::class)->name('examens');
+Route::get('/pharmacies', Activities::class)->name('pharmacies');
+Route::get('/agents', Agent::class)->name('agents');
