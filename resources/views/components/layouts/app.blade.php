@@ -107,7 +107,7 @@
         <!-- Main Container -->
         <main id="main-container">
             <!-- Hero -->
-            @yield('main')
+            {{ $slot }}
             <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
