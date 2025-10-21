@@ -12,6 +12,16 @@ class Activities extends Component
     {
 
         $activities = Activite::orderBy('created_at', 'desc')->paginate(10);
-        return view('livewire.pharmacie.activities', ['activities' => $activities]);
+
+        $pageHeader = [
+            'title' => 'Activités',
+            'subtitle' => 'Liste des activités',
+            'breadcrumbs' => [
+                ['label' => 'Accueil', 'url' => route('home')],
+                ['label' => 'Activités']
+            ]
+        ];
+
+        return view('livewire.pharmacie.activities', ['activities' => $activities, 'pageHeader' => $pageHeader]);
     }
 }

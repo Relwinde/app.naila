@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class)->name('home')->middleware('auth');
 
 Route::get('/login', Login::class)->name('login');
+Route::get('/produits', App\Livewire\Produit\Produits::class)->name('produits'); 
+Route::get('/examens', App\Livewire\Examen\Examens::class)->name('examens');
+Route::get('/pharmacies', App\Livewire\Pharmacie\Activities::class)->name('pharmacies');
