@@ -13,9 +13,9 @@
                     </div>
                 </div>
                 <div class="block-content">
-                    <div class="row justify-content-center py-sm-3 py-md-5">
+                    <div class="justify-content-center py-sm-3 py-md-5">
                         <div class="row">
-                            <div class="col-sm-12 col-md-10">
+                            <div class="col">
                                 <div class="form-group">
                                     <label for="nom">Nom</label>
                                     <input wire:model='name' type="text" class="form-control form-control-alt" id="nom" name="nom" placeholder="Nom du produit..">
@@ -23,9 +23,11 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                            </div>
+                            <div class="col">
                                 <div class="form-group">
-                                    <label for="block-form1-password">Prix</label>
-                                    <input wire:model='price' type="number" class="form-control form-control-alt" id="block-form1-password" name="price" placeholder="Prix unitaire..">
+                                    <label for="price">Prix</label>
+                                    <input wire:model='price' type="number" class="form-control form-control-alt" id="price" name="price" placeholder="Prix unitaire..">
                                     @error('price')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -34,7 +36,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-12 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="block-form1-password">Quantité</label>
                                     <input wire:model='stock_quantity' type="number" class="form-control form-control-alt" id="stock_quantity" name="stock_quantity" placeholder="Quantité..">
@@ -45,12 +47,14 @@
                             </div>
                         </div>
                         <div class="row ">
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea wire:model='description' class="w-100 form-control form-control-alt" id="description" name="description" rows="4" placeholder="Entrez une description.."></textarea>
-                                @error('description')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea wire:model='description' class="w-100 form-control form-control-alt" id="description" name="description" rows="4" placeholder="Entrez une description.."></textarea>
+                                    @error('description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,6 @@
     <!-- Page Content -->
    @include('partials.pages.header', $pageHeader ?? ['title' => 'Produits'])
 
-    <div class="content">
         <!-- Liste des produits -->
         <div class="block block-rounded">
             <div class="block-header">
@@ -33,7 +32,7 @@
                                 @if ($editMode && $produitId === $produit->id)
                                     <input wire:model='name' type="text" class="form-control form-control-alt" />
                                     @error('name')
-                                        <div class="invalid-feedback d-block">
+                                        <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -45,7 +44,7 @@
                                 @if ($editMode && $produitId === $produit->id)
                                     <input wire:model='description' type="text" class="form-control form-control-alt" />
                                     @error('description')
-                                        <div class="invalid-feedback d-block">
+                                        <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -58,7 +57,7 @@
                                 @if ($editMode && $produitId === $produit->id)
                                     <input wire:model='price' type="number" class="form-control form-control-alt" />
                                     @error('price')
-                                        <div class="invalid-feedback d-block">
+                                        <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -108,5 +107,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>

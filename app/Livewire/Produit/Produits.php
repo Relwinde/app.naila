@@ -39,6 +39,7 @@ class Produits extends Component
     }
 
     #[On('produit-created')]
+    #[On('produit-deleted')]
     public function render()
     {
         $produits = Produit::orderBy('nom', 'asc')->paginate(10);
@@ -86,6 +87,7 @@ class Produits extends Component
         $produit = Produit::find($id);
         if ($produit) {
             $produit->delete();
+            $this->dispatch('produit-deleted');
         }
     }
 }

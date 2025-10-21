@@ -109,7 +109,10 @@
         <!-- Main Container -->
         <main id="main-container">
             <!-- Hero -->
-            {{ $slot }}
+                <div class="content">
+                    {{ $slot }}
+                </div>
+
             <!-- END Page Content -->
         </main>
         <!-- END Main Container -->
