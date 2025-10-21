@@ -34,6 +34,8 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
+
+    @livewireStyles
 </head>
 
 <body>
@@ -208,7 +210,9 @@
             assets/js/core/jquery.appear.min.js
             assets/js/core/js.cookie.min.js
         -->
-    @include('partials.scripts')
+        @include('partials.scripts')
+        @livewire('wire-elements-modal')
+        @livewireScripts
 </body>
 
 </html>
