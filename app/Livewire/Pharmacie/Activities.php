@@ -18,8 +18,8 @@ class Activities extends Component
         $activities = VenteProduit::orderBy('created_at', 'desc')->paginate(10);
 
         $pageHeader = [
-            'title' => 'Activités',
-            'subtitle' => 'Liste des activités',
+            'title' => 'Pharmacie',
+            'subtitle' => 'Liste des ventes',
             'breadcrumbs' => [
                 ['label' => 'Accueil', 'url' => route('home')],
                 ['label' => 'Activités']
