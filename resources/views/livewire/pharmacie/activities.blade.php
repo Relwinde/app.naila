@@ -35,12 +35,12 @@
                         <td>{{ $vente->created_at->format('d/m/Y H:i') }}</td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button wire:click.prevent="edit({{ $vente->id }})" class="btn btn-sm btn-light" title="Modifier">
+                                {{-- <button wire:click.prevent="edit({{ $vente->id }})" class="btn btn-sm btn-light" title="Modifier">
                                     <i class="fa fa-fw fa-pencil-alt"></i>
                                 </button>
                                 <button wire:click.prevent="delete({{ $vente->id }})" wire:confirm="Supprimer cette vente ?" class="btn btn-sm btn-light" title="Supprimer">
                                     <i class="fa fa-fw fa-times text-danger"></i>
-                                </button>
+                                </button> --}}
                             </div>
                         </td>
                     </tr>
