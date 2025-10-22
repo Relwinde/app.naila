@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class VenteProduit extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+
+    public function produit()
+    {
+        return $this->belongsTo(Produit::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

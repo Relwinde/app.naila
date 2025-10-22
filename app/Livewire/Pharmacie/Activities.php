@@ -4,11 +4,14 @@ namespace App\Livewire\Pharmacie;
 
 use Livewire\Component;
 use App\Models\Activite;
+use Livewire\Attributes\On;
 use App\Models\VenteProduit;
 use Livewire\WithPagination;
 
 class Activities extends Component
 {
+
+    #[On('vente-created')]
     public function render()
     {
 
