@@ -110,8 +110,6 @@
             <div>
                 {{ $agents->links() }}
             </div>
-
-            
         </div>
     </div>
 </div>

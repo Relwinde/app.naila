@@ -42,6 +42,7 @@ class Agents extends Component
     
     #[On('agent-created')]
     #[On('agent-deleted')]
+    #[On('agent-updated')]
     public function render()
     {
         $agents = Agent::orderBy('nom', 'asc')->paginate(10);
@@ -78,6 +79,7 @@ class Agents extends Component
             $agent->save();
 
             $this->dispatch('agent-updated');
+            $this->reset();
             $this->toggleEditMode(null);
         }
     }

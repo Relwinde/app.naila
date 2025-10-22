@@ -31,7 +31,7 @@ class CreateExamen extends ModalComponent
         ]);
 
         $examen = Examen::make([
-            'nom' => $this->nom,
+            'nom' => mb_strtoupper($this->nom, 'UTF-8'),
             'description' => $this->description,
             'prix' => $this->prix,
         ]);

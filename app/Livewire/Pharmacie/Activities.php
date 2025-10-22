@@ -4,6 +4,7 @@ namespace App\Livewire\Pharmacie;
 
 use Livewire\Component;
 use App\Models\Activite;
+use App\Models\VenteProduit;
 use Livewire\WithPagination;
 
 class Activities extends Component
@@ -11,7 +12,7 @@ class Activities extends Component
     public function render()
     {
 
-        $activities = Activite::orderBy('created_at', 'desc')->paginate(10);
+        $activities = VenteProduit::orderBy('created_at', 'desc')->paginate(10);
 
         $pageHeader = [
             'title' => 'Activités',

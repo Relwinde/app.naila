@@ -1,47 +1,54 @@
-<!-- Modal Création Examen -->
-<div class="modal fade" id="createExamenModal" tabindex="-1" aria-labelledby="createExamenModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="createExamenModalLabel">Ajouter un nouvel examen</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+<div>
+    <form wire:submit.prevent="create">
+        <div class="block block-rounded">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Nouvel Examen</h3>
+                <div class="block-options">
+                    <button wire:click.prevent="create" type="submit" class="btn btn-sm btn-primary">
+                        Enregistrer
+                    </button>
+                    <button type="reset" wire:click='$dispatch("closeModal")' class="btn btn-sm btn-alt-primary">
+                        Annuler
+                    </button>
+                </div>
             </div>
+            <div class="block-content">
+                <div class="justify-content-center py-sm-3 py-md-5">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input wire:model='nom' type="text" class="form-control form-control-alt" id="nom" name="nom" placeholder="Nom de l'examen ..">
+                                @error('nom')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="block-form1-password">Prix</label>
+                                <input wire:model='prix' type="number" class="form-control form-control-alt" id="prix" name="prix" placeholder="Prix de l'examen..">
+                                @error('prix')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
 
-            <form action="" method="POST">
-                @csrf
-                <div class="modal-body">
-
-                    {{-- Nom de l'examen --}}
-                    <div class="mb-3">
-                        <label for="nom" class="form-label fw-bold">Nom de l'examen <span class="text-danger">*</span></label>
-                        <input type="text" name="nom" id="nom" class="form-control" placeholder="Ex : Analyse sanguine" required>
                     </div>
 
-                    {{-- Prix --}}
-                    <div class="mb-3">
-                        <label for="prix" class="form-label fw-bold">Prix (FCFA) <span class="text-danger">*</span></label>
-                        <input type="number" step="0.01" name="prix" id="prix" class="form-control" placeholder="Ex : 1500" required>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="role">Description</label>
+                                <textarea wire:model='description' class="form-control form-control-alt" id="description" name="description" rows="3" placeholder="Entrez une courte description..."></textarea>
+                                @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
-
-                    {{-- Description --}}
-                    <div class="mb-3">
-                        <label for="description" class="form-label fw-bold">Description</label>
-                        <textarea name="description" id="description" rows="3" class="form-control" placeholder="Entrez une courte description..."></textarea>
-                    </div>
-
                 </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="fa fa-times me-1"></i> Annuler
-                    </button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-save me-1"></i> Enregistrer
-                    </button>
-                </div>
-            </form>
-
+            </div>
         </div>
-    </div>
+    </form>
 </div>

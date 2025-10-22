@@ -1,58 +1,109 @@
 <div>
 
     <!-- Page Content -->
-    @include('partials.pages.header', $pageHeader ?? ['title' => 'Examens'])
+    @include('partials.pages.header')
 
     <!-- Liste des examens -->
     <div class="block block-rounded">
 
         <div class="block-header">
-            <h3 class="block-title">Liste des Examens</h3>
+            <h3 class="block-title">{{ $pageHeader['subtitle'] }}</h3>
+            <div class="block-options">
+                <button wire:click="$dispatch('openModal', { component: 'examen.modals.create-examen' })" class="btn btn-sm btn-primary">
+                    <i class="fa fa-plus"></i> Ajouter un examen
+                </button>
+            </div>
         </div>
+        <div class="block-content block-content-full">
+            <table class="table table-bordered table-striped table-vcenter">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prix (FCFA)</th>
+                        <th>Description</th>
+                        <th>Date d’ajout</th>
+                        <th class="text-center" style="width: 100px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($examens as $examen)
+                    <tr>
+                        <td class="font-w600 font-size-sm">
+                            @if ($editMode && $examenId === $examen->id)
+                                <input wire:model='nom' type="text" class="form-control form-control-alt" />
+                                @error('nom')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror  
+                            @else
+                                {{ $examen->nom }}   
+                            @endif
+                        </td>
+                        <td class="font-size-sm">
+                            @if ($editMode && $examenId === $examen->id)
+                                <input wire:model='prix' type="number" class="form-control form-control-alt" />
+                                @error('prix')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            @else
+                                {{ number_format($examen->prix, 0, ',', ' ') }} FCFA
+                            @endif
+                        </td>
+                        <td class="font-size-sm">
 
-        <table class="table table-bordered table-striped table-vcenter">
-            <thead>
-                <tr>
-                    <th class="text-center" style="width: 80px;">ID</th>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix (FCFA)</th>
-                    <th>Date d’ajout</th>
-                    <th class="text-center" style="width: 100px;">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($examens as $examen)
-                <tr>
-                    <td class="text-center font-size-sm">{{ $examen->id }}</td>
-                    <td class="font-w600 font-size-sm">{{ $examen->nom }}</td>
-                    <td class="font-size-sm">{{ $examen->description ?? '—' }}</td>
-                    <td class="font-size-sm">{{ number_format($examen->prix, 0, ',', ' ') }} FCFA</td>
-                    <td class="font-size-sm">{{ $examen->created_at->format('d/m/Y') }}</td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <a href="" class="btn btn-sm btn-info" title="Voir">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="" class="btn btn-sm btn-warning" title="Modifier">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <form action="" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cet examen ?')" title="Supprimer">
-                                    <i class="fa fa-trash"></i>
+                            @if ($editMode && $examenId === $examen->id)
+                                <input wire:model='description' type="text" class="form-control form-control-alt" />
+                                @error('description')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            @else
+                                {{ $examen->description ?? '—' }}
+                            @endif
+                        </td>
+                        <td class="font-size-sm">{{ $examen->created_at->format('d/m/Y') }}</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button @if ($editMode && $examenId === $examen->id) wire:click.prevent="update({{ $examen->id }})"
+                                    
+                                @else
+                                    wire:click.prevent="toggleEditMode({{ $examen->id }})"
+                                @endif type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Modifier">
+                                    @if ($editMode && $examenId === $examen->id)
+                                        <i class="fa fa-fw fa-check"></i>
+                                    @else
+                                        <i class="fa fa-fw fa-pencil-alt"></i>
+                                    @endif
                                 </button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="6" class="text-center text-muted">Aucun examen trouvé</td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
+                                @if ($editMode && $examenId === $examen->id)
+                                    <button wire:click.prevent="toggleEditMode({{ $examen->id }})"
+                                    type="button" title="Annuler" class="btn btn-sm btn-light" data-toggle="tooltip" >
+                                        <i class="fa fa-fw fa-times"></i>
+                                    </button>
+                                @else
+                                    <a wire:click.prevent="delete({{ $examen->id }})"
+                                        title="Supprimer"
+                                        wire:confirm="Êtes-vous sûr de vouloir supprimer ce produit ?" type="button" class="btn btn-sm btn-light" data-toggle="tooltip" >
+                                        <i class="fa fa-fw fa-times"></i>
+                                    </a>
+                                @endif
+                            </div>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">Aucun examen trouvé</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
+            <div>
+                {{ $examens->links() }}
+            </div>
+        </div>
     </div>
 </div>
