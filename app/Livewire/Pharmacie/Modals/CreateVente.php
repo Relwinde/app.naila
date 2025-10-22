@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Pharmacie\Modals;
 
-
+use App\Models\Caisse;
 use App\Models\Produit;
 use App\Models\VenteProduit;
+use App\Models\MouvementCaisse;
 use Illuminate\Support\Facades\DB;
 use LivewireUI\Modal\ModalComponent;
 
@@ -45,17 +46,40 @@ class CreateVente extends ModalComponent
                 'user_id' => auth()->id(),
             ]);
 
+            
+
             try{
                 DB::beginTransaction();
                 $vente->save();
                 $produit->decrement('stock_quantity', $this->quantite);
                 $produit->save();
+
+                $caisse = Caisse::first();
+
+                $solde_before = $caisse->solde;
+
+                $caisse->solde += $this->montant;
+                $caisse->save();
+
+                $solde_after = $caisse->solde;
+
+
+                $mouvement_caisse = MouvementCaisse::make([
+                    'vente_produit_id' => $vente->id,
+                    'solde_before' => $solde_before,
+                    'solde_after' => $solde_after,
+                    'montant' => $this->montant,
+                    'user_id' => auth()->id(),
+                ]);
+
+                $mouvement_caisse->save();
+
                 DB::commit();
                 $this->dispatch('vente-created');
                 $this->reset();
             } catch (\Exception $e) {
                 DB::rollBack();
-                $this->dispatch('error');
+                throw $e;
             }
         }
 

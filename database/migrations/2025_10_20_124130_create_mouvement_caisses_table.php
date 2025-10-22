@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('mouvement_caisses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('vente_produit_id');
+            $table->unsignedBigInteger('vente_produit_id')->nullable();
             $table->foreign('vente_produit_id')->references('id')->on('vente_produits')->onDelete('cascade');
-            $table->unsignedBigInteger('activite_id');
+            $table->unsignedBigInteger('activite_id')->nullable();
             $table->foreign('activite_id')->references('id')->on('activites')->onDelete('cascade');
             $table->decimal('solde_before', 14, 2);
             $table->decimal('montant', 14, 2);
