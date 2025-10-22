@@ -17,10 +17,9 @@
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>
                     <tr>
-                        <th>Consultation</th>
+                        <th>Type</th>
                         <th>Agent</th>
-                        <th>Examen</th>
-                        <th>Observations</th>
+                        <th>Montant</th>
                         <th>Date</th>
                         <th class="text-center" style="width: 100px;">Actions</th>
                     </tr>
@@ -28,10 +27,9 @@
                 <tbody>
                     @forelse ($prestations as $activite)
                     <tr>
-                        <td>{{ $activite->consultation?->id ?? '—' }}</td>
+                        <td>{{ $activite->examen?->id ? 'Examen' : 'Consultation' }}</td>
                         <td>{{ $activite->agent?->nom ?? '—' }} {{ $activite->agent?->prenom ?? '' }}</td>
-                        <td>{{ $activite->examen?->nom ?? '—' }}</td>
-                        <td>{{ $activite->observations ?? '—' }}</td>
+                        <td>{{ number_format($activite->examen?->prix ?? $activite->consultation?->prix ?? 0, 0, ',', ' ') }}</td>
                         <td>{{ $activite->created_at->format('d/m/Y H:i') }}</td>
                         <td class="text-center">
                             <div class="btn-group">
