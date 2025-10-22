@@ -11,12 +11,12 @@ class CreateUser extends ModalComponent
 {
     public $name;
     public $email;
-    public $password;
     public $profile;
 
     public function render()
     {
-        return view('livewire.user.modals.create-user');
+        $profiles = Role::all(['id', 'name']);
+        return view('livewire.user.modals.create-user', ['profiles' => $profiles]);
     }
 
     public function create (){
@@ -24,15 +24,12 @@ class CreateUser extends ModalComponent
         $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
             'profile' => 'required|string',
         ], [
             'name.required' => 'Le nom est obligatoire.',
             'email.required' => "L'email est obligatoire.",
             'email.email' => "L'email doit être une adresse email valide.",
             'email.unique' => "Cet email est déjà utilisé.",
-            'password.required' => 'Le mot de passe est obligatoire.',
-            'password.min' => 'Le mot de passe doit contenir au moins 8 caractères.',
             'profile.required' => 'Le profil est obligatoire.',
         ]);
 
@@ -49,12 +46,13 @@ class CreateUser extends ModalComponent
             $user->syncRoles(Role::findById($this->profile));
 
             DB::commit();
+            $this->dispatch('user-created');
+            $this->reset();
         } catch (\Exception $e) {
             DB::rollBack();
             $this->dispatch('error');
         }
-        $this->dispatch('user-created');
-        $this->reset();
+        
         
     }
 }

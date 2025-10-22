@@ -1,6 +1,6 @@
 <div>
     <!-- Page Content -->
-   @include('partials.pages.header',)
+   @include('partials.pages.header')
 
         <!-- Liste des produits -->
         <div class="block block-rounded">

@@ -10,6 +10,7 @@ use App\Livewire\Pharmacie\Activities;
 use App\Livewire\Prestation\Prestations;
 use App\Livewire\Caisse\Home as CaisseHome;
 use App\Livewire\Consultation\Consultations;
+use App\Livewire\User\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::get('/consultations', Consultations::class)->name('consultations');
 Route::get('/prestations', Prestations::class)->name('prestations');
 
 Route::get('/caisse', CaisseHome::class)->name('caisse');
+Route::get('/utilisateurs', Users::class)->name('utilisateurs');
