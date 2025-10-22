@@ -1,11 +1,11 @@
 <div>
     <!-- Page Content -->
-   @include('partials.pages.header', $pageHeader ?? ['title' => 'Produits'])
+   @include('partials.pages.header',)
 
         <!-- Liste des produits -->
         <div class="block block-rounded">
             <div class="block-header">
-                <h3 class="block-title">Liste des Produits</h3>
+                <h3 class="block-title">{{ $pageHeader['subtitle'] }}</h3>
                 <div class="block-options">
                     <button wire:click="$dispatch('openModal', { component: 'produit.modals.create-produit' })" class="btn btn-sm btn-primary">
                         <i class="fa fa-plus"></i> Ajouter un produit
