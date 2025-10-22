@@ -49,13 +49,12 @@ class CreateProduit extends ModalComponent
             $produit->save();
 
             DB::commit();
+            $this->dispatch('produit-created');
+            $this->reset();
         } catch (\Exception $e) {
             DB::rollBack();
             $this->dispatch('error');
         }
-
-        $this->dispatch('produit-created');
-        $this->reset();
         
     }
 }

@@ -59,7 +59,8 @@
                     <tr>
                         <th>Type</th>
                         <th>Montant (FCFA)</th>
-                        <th>Description</th>
+                        <th>Solde Avant</th>
+                        <th>Solde Après</th>
                         <th>Auteur</th>
                         <th>Date</th>
                     </tr>
@@ -79,11 +80,12 @@
                                 <span class="badge bg-danger">Dépense</span>
                             @endif
                             @if ($mouvement->depot_id !== null)
-                                    <span class="badge bg-danger">Dépôt</span>
+                                    <span class="badge bg-primary">Dépôt</span>
                             @endif
                         </td>
                         <td>{{ number_format($mouvement->montant, 2, ',', ' ') }}</td>
-                        <td>{{ $mouvement->description }}</td>
+                        <td>{{  number_format($mouvement->solde_before, 2, ',', ' ') }}</td>
+                        <td>{{  number_format($mouvement->solde_after, 2, ',', ' ') }}</td>
                         <td>{{ $mouvement->user->name ?? '—' }}</td>
                         <td>{{ $mouvement->created_at->format('d/m/Y H:i') }}</td>
                     </tr>
