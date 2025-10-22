@@ -16,13 +16,6 @@
             <li class="nav-main-item">
                 <a class="nav-main-link" href="#">
                     <i class="nav-main-link-icon si si-notebook"></i>
-                    <span class="nav-main-link-name">Consultations</span>
-                </a>
-            </li>
-
-            <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                    <i class="nav-main-link-icon si si-heart"></i>
                     <span class="nav-main-link-name">Prestations</span>
                 </a>
             </li>
@@ -48,6 +41,13 @@
                 <a class="nav-main-link {{ request()->routeIs('examens') ? 'active' : '' }}" href="{{ route('examens') }}">
                     <i class="nav-main-link-icon si si-magnet"></i>
                     <span class="nav-main-link-name">Examens</span>
+                </a>
+            </li>
+
+            <li class="nav-main-item">
+                <a class="nav-main-link {{ request()->routeIs('prestations') ? 'active' : '' }}" href="{{ route('consultations') }}">
+                    <i class="nav-main-link-icon si si-heart"></i>
+                    <span class="nav-main-link-name">Consultations</span>
                 </a>
             </li>
 

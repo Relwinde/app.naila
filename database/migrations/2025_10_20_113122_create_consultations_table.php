@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prestations', function (Blueprint $table) {
+        Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_patient');
-            $table->enum('type', ['consultation', 'examen']);
-            $table->bigInteger('examen_id')->unsigned()->nullable();
-            $table->foreign('examen_id')->references('id')->on('examens')->onDelete('set null');
+            $table->string('nom');
             $table->decimal('prix', 10, 2);
             $table->text('description')->nullable();
             $table->timestamps();
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prestations');
+        Schema::dropIfExists('consultations');
     }
 };

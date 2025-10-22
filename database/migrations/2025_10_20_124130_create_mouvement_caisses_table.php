@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('vente_produit_id');
             $table->foreign('vente_produit_id')->references('id')->on('vente_produits')->onDelete('cascade');
-            $table->unsignedBigInteger('prestation_id');
-            $table->foreign('prestation_id')->references('id')->on('prestations')->onDelete('cascade');
+            $table->unsignedBigInteger('activite_id');
+            $table->foreign('activite_id')->references('id')->on('activites')->onDelete('cascade');
             $table->decimal('solde_before', 14, 2);
             $table->decimal('montant', 14, 2);
             $table->decimal('solde_after', 14, 2);

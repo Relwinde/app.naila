@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('activites', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('prestation_id')->unsigned();
-            $table->foreign('prestation_id')->references('id')->on('prestations')->onDelete('cascade');
+            $table->bigInteger('consultation_id')->unsigned()->nullable();
+            $table->foreign('consultation_id')->references('id')->on('consultations')->onDelete('cascade');
             $table->bigInteger('agent_id')->unsigned();
+            $table->bigInteger('examen_id')->unsigned()->nullable();
+            $table->foreign('examen_id')->references('id')->on('examens')->onDelete('set null');
             $table->foreign('agent_id')->references('id')->on('agents')->onDelete('cascade');
             $table->string('observations')->nullable();
             $table->timestamps();
