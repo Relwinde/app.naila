@@ -14,7 +14,7 @@
             <li class="nav-main-heading">Activités</li>
 
             <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
+                <a class="nav-main-link {{ request()->routeIs('prestations') ? 'active' : '' }}" href="{{ route('prestations') }}">
                     <i class="nav-main-link-icon si si-notebook"></i>
                     <span class="nav-main-link-name">Prestations</span>
                 </a>

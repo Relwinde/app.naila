@@ -19,8 +19,8 @@
                     <tr>
                         <th>Produit</th>
                         <th>Quantité</th>
-                        <th>Prix de vente (FCFA)</th>
-                        <th>Auteur vnte</th>
+                        <th>Montant (FCFA)</th>
+                        <th>Auteur vente</th>
                         <th>Date</th>
                         <th class="text-center" style="width: 100px;">Actions</th>
                     </tr>

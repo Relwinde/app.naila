@@ -8,6 +8,7 @@ use App\Livewire\Produit\Produits;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pharmacie\Activities;
 use App\Livewire\Consultation\Consultations;
+use App\Livewire\Prestation\Prestations;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/examens', Examens::class)->name('examens');
 Route::get('/pharmacies', Activities::class)->name('pharmacies');
 Route::get('/agents', Agents::class)->name('agents');
 Route::get('/consultations', Consultations::class)->name('consultations');
+Route::get('/prestations', Prestations::class)->name('prestations');
