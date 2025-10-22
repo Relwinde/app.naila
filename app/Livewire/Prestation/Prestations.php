@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Prestation;
 
-use App\Models\Activite;
 use Livewire\Component;
+use App\Models\Activite;
+use Livewire\Attributes\On;
 
 class Prestations extends Component
 {
+
+    #[On('prestation-created')]
     public function render()
     {
         $prestations = Activite::orderBy('created_at', 'desc')->paginate(10);

@@ -77,8 +77,8 @@
 
             <li class="nav-main-item">
                 <a class="nav-main-link" href="#">
-                    <i class="nav-main-link-icon si si-settings"></i>
-                    <span class="nav-main-link-name">Configurations</span>
+                    <i class="nav-main-link-icon si si-user"></i>
+                    <span class="nav-main-link-name">Profiles</span>
                 </a>
             </li>
         </ul>
