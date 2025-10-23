@@ -57,7 +57,12 @@
                     <span class="nav-main-link-name">Produits</span>
                 </a>
             </li>
-
+            <li class="nav-main-item">
+                <a class="nav-main-link {{ request()->routeIs('approvisionnements') ? 'active' : '' }}" href="{{ route('approvisionnements') }}">
+                    <i class="nav-main-link-icon si si-bag"></i>
+                    <span class="nav-main-link-name">Approvisionnements</span>
+                </a>
+            </li>
             <li class="nav-main-item">
                 <a class="nav-main-link {{ request()->routeIs('agents') ? 'active' : '' }}" href="{{ route('agents') }}">
                     <i class="nav-main-link-icon si si-user-follow"></i>
@@ -69,7 +74,7 @@
             <li class="nav-main-heading">Paramètres</li>
 
             <li class="nav-main-item">
-                <a class="nav-main-link" href="{{ route('utilisateurs') }}">
+                <a class="nav-main-link {{ request()->routeIs('utilisateurs') ? 'active' : '' }}" href="{{ route('utilisateurs') }}">
                     <i class="nav-main-link-icon si si-users"></i>
                     <span class="nav-main-link-name">Utilisateurs</span>
                 </a>
