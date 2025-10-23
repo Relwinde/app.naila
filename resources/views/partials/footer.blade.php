@@ -1,10 +1,10 @@
 <div class="content py-3">
     <div class="row font-size-sm">
         <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
-            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+            Développé avec <i class="fa fa-heart text-danger"></i> par <strong>Clinique NAILA</strong>
         </div>
         <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-            <a class="font-w600" href="https://1.envato.market/AVD6j" target="_blank">OneUI 4.7</a> &copy; <span data-toggle="year-copy"></span>
+            <strong>Clinique NAILA</strong> &copy; <span data-toggle="year-copy"></span> - Tous droits réservés
         </div>
     </div>
 </div>

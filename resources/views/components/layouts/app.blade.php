@@ -1,18 +1,37 @@
 <!doctype html>
 <html lang="en">
 
+@php
+$titles = [
+'home' => 'Tableau de Bord',
+'login' => 'Connexion',
+'produits' => 'Produits',
+'examens' => 'Liste des Examens',
+'pharmacies' => 'Pharmacie',
+'agents' => ' Agents',
+'consultations' => 'Consultations',
+'prestations' => 'Prestations',
+'caisse' => 'Caisse Principale',
+'utilisateurs' => 'Utilisateurs du Système',
+'profils' => 'Profils et Permissions',
+'approvisionnements' => 'Approvisionnements Pharmaceutiques',
+];
+
+$pageTitle = $titles[Route::currentRouteName()] ?? ucfirst(Route::currentRouteName());
+@endphp
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>OneUI - Bootstrap 4 Admin Template &amp; UI Framework</title>
+    <title>Clinique NAILA ● {{ $pageTitle }}</title>
 
-    <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="description" content="Clinique NAILA &amp; Clinique NAILA ● {{ $pageTitle }}">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework">
+    <meta property="og:title" content="Clinique NAILA ● {{ $pageTitle }}">
     <meta property="og:site_name" content="OneUI">
     <meta property="og:description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">
@@ -80,7 +99,7 @@
         -->
     <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-            {{-- @include('partials.side-overlay') --}}
+        {{-- @include('partials.side-overlay') --}}
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
@@ -109,9 +128,9 @@
         <!-- Main Container -->
         <main id="main-container">
             <!-- Hero -->
-                <div class="content">
-                    {{ $slot }}
-                </div>
+            <div class="content">
+                {{ $slot }}
+            </div>
 
             <!-- END Page Content -->
         </main>
@@ -213,9 +232,9 @@
             assets/js/core/jquery.appear.min.js
             assets/js/core/js.cookie.min.js
         -->
-        @include('partials.scripts')
-        @livewire('wire-elements-modal')
-        @livewireScripts
+    @include('partials.scripts')
+    @livewire('wire-elements-modal')
+    @livewireScripts
 </body>
 
 </html>
