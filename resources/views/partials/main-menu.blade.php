@@ -5,7 +5,7 @@
             <!-- ACCUEIL -->
             <li class="nav-main-item">
                 <a class="nav-main-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
-                    <i class="nav-main-link-icon si si-speedometer"></i>
+                    <i class="nav-main-link-icon si si-home"></i>
                     <span class="nav-main-link-name">Accueil</span>
                 </a>
             </li>
@@ -76,7 +76,7 @@
             </li>
 
             <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
+                <a class="nav-main-link" href="{{ route('profils') }}">
                     <i class="nav-main-link-icon si si-user"></i>
                     <span class="nav-main-link-name">Profiles</span>
                 </a>

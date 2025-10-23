@@ -55,6 +55,7 @@ class CreatePrestation extends ModalComponent
 
         $prestation = Activite::make([
             'observations' => $this->observation,
+            'montant' => $this->type === 'examen' ? optional(Examen::find($this->examen_id))->prix : ( $this->type === 'consultation' ? optional(Consultation::find($this->consultation_id))->prix : 0 ),
             'agent_id' => $this->agent_id,
             'examen_id' => $this->type === 'examen' ? $this->examen_id : null,
             'consultation_id' => $this->type === 'consultation' ? $this->consultation_id : null,

@@ -2,15 +2,16 @@
 
 use App\Livewire\Home;
 use App\Livewire\Login;
+use App\Livewire\User\Users;
 use App\Livewire\Agent\Agents;
 use App\Livewire\Examen\Examens;
 use App\Livewire\Produit\Produits;
+use App\Livewire\Profile\Profiles;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pharmacie\Activities;
 use App\Livewire\Prestation\Prestations;
 use App\Livewire\Caisse\Home as CaisseHome;
 use App\Livewire\Consultation\Consultations;
-use App\Livewire\User\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,5 @@ Route::get('/prestations', Prestations::class)->name('prestations');
 
 Route::get('/caisse', CaisseHome::class)->name('caisse');
 Route::get('/utilisateurs', Users::class)->name('utilisateurs');
+
+Route::get('/profils', Profiles::class)->name('profils');

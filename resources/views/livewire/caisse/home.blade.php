@@ -51,6 +51,33 @@
             </div>
         </div>
 
+        <div class="block-header align-items-left">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="start-date">Date de début :</label>
+                        <input wire:model.live="startDate" type="date" class="form-control" id="start-date">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="end-date">Date de fin :</label>
+                        <input wire:model.live="endDate" type="date" class="form-control" id="end-date">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="start-date">Réinitialiser :</label>
+                        <button type="button" class="btn btn-rounded btn-alt-danger mr-1 mb-3 form-control" wire:click="clearFilters">
+                                    <i class="fa fa-fw fa-times mr-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="block-content block-content-full">
             <!-- Contenu de la page Caisse -->
 

@@ -13,6 +13,41 @@
             </div>
         </div>
 
+        <div class="block-header align-items-left">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="start-date">Date de début :</label>
+                        <input wire:model.live="startDate" type="date" class="form-control" id="start-date">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="end-date">Date de fin :</label>
+                        <input wire:model.live="endDate" type="date" class="form-control" id="end-date">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="start-date">Réinitialiser :</label>
+                        <button type="button" class="btn btn-rounded btn-alt-danger mr-1 mb-3 form-control" wire:click="clearFilters">
+                                    <i class="fa fa-fw fa-times mr-1"></i>
+                        </button>
+                    </div>
+                </div>
+                @if ($startDate != null || $endDate != null)
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="total-montant">Total prestations :</label>
+                            <input type="text" readonly class="form-control" id="total-montant" value="{{ number_format($this->sum ?? 0, 2, ',', ' ') }} FCFA">
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+
         <div class="block-content block-content-full">
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>

@@ -10,6 +10,8 @@ use App\Models\MouvementCaisse;
 
 class Home extends Component
 {
+    public $startDate;
+    public $endDate;
 
     use WithPagination;
 
@@ -17,8 +19,19 @@ class Home extends Component
     #[On('depot-created')]
     public function render()
     {
-        $mouvements = MouvementCaisse::orderBy('created_at', 'desc')->paginate(10);
+        $query = MouvementCaisse::query();
         $caisse = Caisse::first();
+
+        if ($this->startDate) {
+            $start_date = \Carbon\Carbon::parse($this->startDate)->startOfDay()->format('Y-m-d H:i:s');
+            $query->where('mouvement_caisses.created_at', '>=', $start_date);
+        }
+
+        if ($this->endDate) {
+            $end_date = \Carbon\Carbon::parse($this->endDate)->endOfDay()->format('Y-m-d H:i:s');
+            $query->where('mouvement_caisses.created_at', '<=', $end_date);
+        }
+        $mouvements = $query->orderBy('created_at', 'DESC')->paginate(10);
 
         $pageHeader = [
             'title' => 'Caisse',
@@ -30,5 +43,10 @@ class Home extends Component
         ];
 
         return view('livewire.caisse.home', ['pageHeader' => $pageHeader, 'mouvements' => $mouvements, 'caisse' => $caisse]);
+    }
+
+    public function clearFilters(){
+        $this->startDate = null;
+        $this->endDate = null;
     }
 }

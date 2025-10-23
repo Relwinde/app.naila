@@ -35,6 +35,13 @@ class CreateVente extends ModalComponent
             'quantite.integer' => "La quantité doit être un entier.",
             'quantite.min' => "La quantité doit être au moins de 1.",
         ]);
+        
+        // Vérifier la disponibilité du stock
+
+        if ($this->quantite > optional(Produit::find($this->produit_id))->stock_quantity) {
+            $this->addError('quantite', 'La quantité demandée dépasse le stock disponible.');
+            return;
+        }
 
         $produit = Produit::find($this->produit_id);
 
