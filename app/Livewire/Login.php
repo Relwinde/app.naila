@@ -28,6 +28,8 @@ class Login extends Component
             return redirect()->intended('/');
         }
 
+        $this->addError('loginFailed', 'Adresse mail ou mot de passe incorrect');
+
         $this->dispatch('loginFailed');
     }
 }
