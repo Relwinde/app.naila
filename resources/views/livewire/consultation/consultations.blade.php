@@ -14,7 +14,7 @@
         </div>
 
         <div class="block-content block-content-full">
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full table-responsive-md">
                 <thead>
                     <tr>
                         <th>Nom</th>

@@ -81,7 +81,7 @@
         <div class="block-content block-content-full">
             <!-- Contenu de la page Caisse -->
 
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full table-responsive">
                 <thead>
                     <tr>
                         <th>Type</th>

@@ -4,7 +4,7 @@
 
     {{-- Tableau des ventes de produits --}}
     <div class="block block-rounded">
-        <div class="block-header d-flex justify-content-between align-items-center">
+        <div class="block-header d-flex justify-content-between align-items-center table-responsive-md">
             <h3 class="block-title">{{ $pageHeader['subtitle'] }}</h3>
             <div class="block-options">
                 <button wire:click="$dispatch('openModal', { component: 'pharmacie.modals.create-vente' })" class="btn btn-sm btn-primary">

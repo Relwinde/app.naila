@@ -13,7 +13,7 @@
 
 
         <div class="block-content block-content-full">
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full table-responsive-md">
                 <thead>
                     <tr>
                         <th>Nom du profil</th>
@@ -28,7 +28,7 @@
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button wire:click="$dispatch('openModal', { component: 'profile.modals.edit-profile', profileId: {{ $profile->id }} })" class="btn btn-sm btn-alt-secondary" type="button" data-toggle="tooltip" title="Éditer">
+                                <button wire:click="$dispatch('openModal', {component: 'profile.modals.view-profile', arguments: { profile : {{ $profile->id }} }})" class="btn btn-sm btn-alt-secondary" type="button" data-toggle="tooltip" title="Voir">
                                     <i class="fa fa-eye"></i>
                                 </button>
                             </div>

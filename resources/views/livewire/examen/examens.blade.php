@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="block-content block-content-full">
-            <table class="table table-bordered table-striped table-vcenter">
+            <table class="table table-bordered table-striped table-vcenter table-responsive-md">
                 <thead>
                     <tr>
                         <th>Nom</th>
