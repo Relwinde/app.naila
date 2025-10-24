@@ -81,7 +81,7 @@
             </li>
 
             <li class="nav-main-item">
-                <a class="nav-main-link" href="{{ route('profils') }}" wire:navigate>
+                <a class="nav-main-link {{ request()->routeIs('profils') ? 'active' : '' }}" href="{{ route('profils') }}" wire:navigate>
                     <i class="nav-main-link-icon si si-user"></i>
                     <span class="nav-main-link-name">Profiles</span>
                 </a>
