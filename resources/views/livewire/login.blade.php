@@ -47,7 +47,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row justify-content-center mb-0">
+                                <div  class="form-group row flex justify-content-center m-0">
+                                    <div wire:loading class=" spinner-border text-primary" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row flex justify-content-center mb-0">
                                     <div class="col-md-6 col-xl-5">
                                         <button wire:click.prevent="login" type="submit" class="btn btn-block btn-primary">
                                             <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Se connecter

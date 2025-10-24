@@ -7,6 +7,9 @@
                         <button wire:click.prevent="create" type="submit" class="btn btn-sm btn-primary">
                             Enregistrer
                         </button>
+                        <div wire:loading class=" spinner-border spinner-border-sm text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                         <button type="reset" wire:click='$dispatch("closeModal")' class="btn btn-sm btn-alt-primary">
                             Annuler
                         </button>
