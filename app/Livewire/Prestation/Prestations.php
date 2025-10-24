@@ -43,7 +43,7 @@ class Prestations extends Component
             ]
         ];
 
-        return view('livewire.prestation.prestations', ['prestations' => $prestations, 'pageHeader' => $pageHeader]);
+        return view('livewire.prestation.prestations', ['prestations' => $prestations, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des prestations'] );
     }
 
     public function clearFilters(){

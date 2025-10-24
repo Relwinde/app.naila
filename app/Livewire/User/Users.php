@@ -25,7 +25,7 @@ class Users extends Component
         ];
 
         $users = User::orderBy('name', 'asc')->paginate(10);
-        return view('livewire.user.users', ['users' => $users, 'pageHeader' => $pageHeader]);
+        return view('livewire.user.users', ['users' => $users, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des utilisateurs'] );
     }
 
     public function delete($id)

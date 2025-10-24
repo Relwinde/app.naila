@@ -42,7 +42,7 @@ class Home extends Component
             ]
         ];
 
-        return view('livewire.caisse.home', ['pageHeader' => $pageHeader, 'mouvements' => $mouvements, 'caisse' => $caisse]);
+        return view('livewire.caisse.home', ['pageHeader' => $pageHeader, 'mouvements' => $mouvements, 'caisse' => $caisse])->layout('components.layouts.app', ['title'=>'Caisse'] );
     }
 
     public function clearFilters(){

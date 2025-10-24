@@ -47,7 +47,7 @@ class Activities extends Component
             ]
         ];
 
-        return view('livewire.pharmacie.activities', ['activities' => $activities, 'pageHeader' => $pageHeader]);
+        return view('livewire.pharmacie.activities', ['activities' => $activities, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Pharmacie'] );
     }
 
 

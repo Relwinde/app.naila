@@ -53,7 +53,7 @@ class Produits extends Component
             ]
         ];
 
-        return view('livewire.produit.produits', ['produits' => $produits, 'pageHeader' => $pageHeader]);
+        return view('livewire.produit.produits', ['produits' => $produits, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des produits'] );
     }
 
     public function update($id)

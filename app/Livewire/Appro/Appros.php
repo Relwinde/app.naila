@@ -40,7 +40,7 @@ class Appros extends Component
             ]
         ];
 
-        return view('livewire.appro.appros', ['appros' => $appros, 'pageHeader' => $pageHeader]);
+        return view('livewire.appro.appros', ['appros' => $appros, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des approvisionnements'] );
     }
 
     public function clearFilters(){

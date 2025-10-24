@@ -1,37 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
-@php
-$titles = [
-'home' => 'Tableau de Bord',
-'login' => 'Connexion',
-'produits' => 'Produits',
-'examens' => 'Liste des Examens',
-'pharmacies' => 'Pharmacie',
-'agents' => ' Agents',
-'consultations' => 'Consultations',
-'prestations' => 'Prestations',
-'caisse' => 'Caisse Principale',
-'utilisateurs' => 'Utilisateurs du Système',
-'profils' => 'Profils et Permissions',
-'approvisionnements' => 'Approvisionnements Pharmaceutiques',
-];
-
-$pageTitle = $titles[Route::currentRouteName()] ?? ucfirst(Route::currentRouteName());
-@endphp
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Clinique NAILA ● {{ $pageTitle }}</title>
+    <title>Clinique NAILA ● {{ $title }}</title>
 
-    <meta name="description" content="Clinique NAILA &amp; Clinique NAILA ● {{ $pageTitle }}">
+    <meta name="description" content="Clinique NAILA &amp; Clinique NAILA ● {{ $title }}">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Clinique NAILA ● {{ $pageTitle }}">
+    <meta property="og:title" content="Clinique NAILA ● {{ $title }}">
     <meta property="og:site_name" content="OneUI">
     <meta property="og:description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">

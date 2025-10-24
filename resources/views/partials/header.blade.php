@@ -17,9 +17,9 @@
 
         <!-- Apps Modal -->
         <!-- Opens the Apps modal found at the bottom of the page, after footer’s markup -->
-        <button type="button" class="btn btn-sm btn-dual mr-2" data-toggle="modal" data-target="#one-modal-apps">
+        {{-- <button type="button" class="btn btn-sm btn-dual mr-2" data-toggle="modal" data-target="#one-modal-apps">
             <i class="fa fa-fw fa-cubes"></i>
-        </button>
+        </button> --}}
         <!-- END Apps Modal -->
 
         <!-- Open Search Section (visible on smaller screens) -->
@@ -57,10 +57,10 @@
                 <div class="p-3 text-center bg-primary-dark rounded-top">
                     <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
                     <p class="mt-2 mb-0 text-white font-w500">{{Auth::user()->name}}</p>
-                    <p class="mb-0 text-white-50 font-size-sm">Web Developer</p>
+                    <p class="mb-0 text-white-50 font-size-sm">{{ Auth::user()->roles()->first()->name }}</p>
                 </div>
                 <div class="p-2">
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
+                    {{-- <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
                         <span class="font-size-sm font-w500">Inbox</span>
                         <span class="badge badge-pill badge-primary ml-2">3</span>
                     </a>
@@ -74,9 +74,9 @@
                     <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_lock.html">
                         <span class="font-size-sm font-w500">Lock Account</span>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_signin.html">
-                        <span class="font-size-sm font-w500">Log Out</span>
+                    </a> --}}
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}">
+                        <span class="font-size-sm font-w500">Se Déconnecter</span>
                     </a>
                 </div>
             </div>
@@ -89,9 +89,9 @@
 
         <!-- Toggle Side Overlay -->
         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-        <button type="button" class="btn btn-sm btn-dual ml-2" data-toggle="layout" data-action="side_overlay_toggle">
+        {{-- <button type="button" class="btn btn-sm btn-dual ml-2" data-toggle="layout" data-action="side_overlay_toggle">
             <i class="fa fa-fw fa-list-ul fa-flip-horizontal"></i>
-        </button>
+        </button> --}}
         <!-- END Toggle Side Overlay -->
     </div>
     <!-- END Right Section -->

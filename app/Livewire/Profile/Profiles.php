@@ -25,6 +25,6 @@ class Profiles extends Component
             ]
         ];
 
-        return view('livewire.profile.profiles', ['profiles' => $profiles, 'pageHeader' => $pageHeader]);
+        return view('livewire.profile.profiles', ['profiles' => $profiles, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des profiles'] );
     }
 }

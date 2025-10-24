@@ -54,7 +54,7 @@ class Agents extends Component
                 ['label' => 'Agents']
             ]
         ];
-        return view('livewire.agent.agents', ['agents' => $agents, 'pageHeader' => $pageHeader]);
+        return view('livewire.agent.agents', ['agents' => $agents, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des agents'] );
     }
 
     public function update($id)

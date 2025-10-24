@@ -53,7 +53,7 @@ class Examens extends Component
                 ['label' => 'Examens']
             ]
         ];
-        return view('livewire.examen.examens', ['examens' => $examens, 'pageHeader' => $pageHeader]);
+        return view('livewire.examen.examens', ['examens' => $examens, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste des examens'] );
     }
 
 

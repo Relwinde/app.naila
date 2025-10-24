@@ -64,7 +64,7 @@
 
             <!-- Footer -->
             <div class="font-size-sm text-center text-muted py-3">
-                <strong>OneUI 4.7</strong> &copy; <span data-toggle="year-copy"></span>
+                <strong>Clinique Naila 1.0</strong> &copy; <span data-toggle="year-copy"></span>
             </div>
             <!-- END Footer -->
         </div>

@@ -56,7 +56,7 @@ class Consultations extends Component
             ]
         ];
 
-        return view('livewire.consultation.consultations', ['consultations' => $consultations, 'pageHeader' => $pageHeader]);
+        return view('livewire.consultation.consultations', ['consultations' => $consultations, 'pageHeader' => $pageHeader])->layout('components.layouts.app', ['title'=>'Liste consultation'] );
     }
 
     public function update($id)
